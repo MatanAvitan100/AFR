@@ -1,0 +1,34 @@
+.text:0000000000000846                 push    rbp            
+.text:0000000000000847                 mov     rbp, rsp
+.text:000000000000084A                 mov     [rbp+this], rdi
+.text:000000000000084E                 mov     rax, [rbp+this]
+.text:0000000000000852                 mov     rax, [rax]
+.text:0000000000000855                 mov     [rbp+var_8], rax
+.text:0000000000000859                 mov     [rbp+var_10], 4
+.text:0000000000000860                 mov     eax, [rbp+var_10]
+.text:0000000000000863                 mov     [rbp+var_C], eax
+.text:0000000000000866                 cmp     [rbp+var_C], 0
+.text:000000000000086A                 jz      short loc_88F
+.text:000000000000086C                 cmp     [rbp+var_C], 1
+.text:0000000000000870                 jz      short loc_88E
+.text:0000000000000872                 cmp     [rbp+var_C], 2
+.text:0000000000000876                 jz      short loc_88A
+.text:0000000000000878                 cmp     [rbp+var_C], 4
+.text:000000000000087C                 jz      short loc_886
+.text:000000000000087E                 cmp     [rbp+var_C], 6
+.text:0000000000000882                 jnz     short loc_88D
+.text:0000000000000884                 jmp     short loc_887
+.text:0000000000000886                 nop
+.text:0000000000000887                 nop
+.text:0000000000000888                 jmp     short loc_88F
+.text:000000000000088A                 nop
+.text:000000000000088B                 jmp     short loc_88E
+.text:000000000000088D                 nop
+.text:000000000000088E                 nop
+.text:000000000000088F                 mov     rax, [rbp+var_8]
+.text:0000000000000893                 mov     edx, 0
+.text:0000000000000898                 mov     [rax], dl
+.text:000000000000089A                 mfence
+.text:000000000000089D                 nop
+.text:000000000000089E                 pop     rbp
+.text:000000000000089F                 retn

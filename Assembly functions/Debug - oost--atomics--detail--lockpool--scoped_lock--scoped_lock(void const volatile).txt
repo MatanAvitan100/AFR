@@ -1,0 +1,85 @@
+.text:000000000000074A                 push    rbp            
+.text:000000000000074B                 mov     rbp, rsp
+.text:000000000000074E                 mov     [rbp+this], rdi
+.text:0000000000000752                 mov     [rbp+addr], rsi
+.text:0000000000000756                 mov     rcx, [rbp+addr]
+.text:000000000000075A                 mov     rdx, 0C7CE0C7CE0C7CE0Dh
+.text:0000000000000764                 mov     rax, rcx
+.text:0000000000000767                 mul     rdx
+.text:000000000000076A                 shr     rdx, 5
+.text:000000000000076E                 mov     rax, rdx
+.text:0000000000000771                 shl     rax, 2
+.text:0000000000000775                 add     rax, rdx
+.text:0000000000000778                 shl     rax, 3
+.text:000000000000077C                 add     rax, rdx
+.text:000000000000077F                 sub     rcx, rax
+.text:0000000000000782                 mov     rdx, rcx
+.text:0000000000000785                 shl     rdx, 6
+.text:0000000000000789                 lea     rax, boost__atomics__detail__anonymous_namespace__g_lock_pool
+.text:0000000000000790                 add     rdx, rax
+.text:0000000000000793                 mov     rax, [rbp+this]
+.text:0000000000000797                 mov     [rax], rdx
+.text:000000000000079A                 mov     rax, [rbp+this]
+.text:000000000000079E                 mov     rax, [rax]
+.text:00000000000007A1                 mov     [rbp+var_10], rax
+.text:00000000000007A5                 mov     [rbp+var_20], 2
+.text:00000000000007AC                 mov     eax, [rbp+var_20]
+.text:00000000000007AF                 mov     [rbp+var_1C], eax
+.text:00000000000007B2                 cmp     [rbp+var_1C], 0
+.text:00000000000007B6                 jz      short loc_7DB
+.text:00000000000007B8                 cmp     [rbp+var_1C], 1
+.text:00000000000007BC                 jz      short loc_7DA
+.text:00000000000007BE                 cmp     [rbp+var_1C], 2
+.text:00000000000007C2                 jz      short loc_7D6
+.text:00000000000007C4                 cmp     [rbp+var_1C], 4
+.text:00000000000007C8                 jz      short loc_7D2
+.text:00000000000007CA                 cmp     [rbp+var_1C], 6
+.text:00000000000007CE                 jnz     short loc_7D9
+.text:00000000000007D0                 jmp     short loc_7D3
+.text:00000000000007D2                 nop
+.text:00000000000007D3                 nop
+.text:00000000000007D4                 jmp     short loc_7DB
+.text:00000000000007D6                 nop
+.text:00000000000007D7                 jmp     short loc_7DA
+.text:00000000000007D9                 nop
+.text:00000000000007DA                 nop
+.text:00000000000007DB                 mov     rdx, [rbp+var_10]
+.text:00000000000007DF                 mov     eax, 1
+.text:00000000000007E4                 xchg    al, [rdx]
+.text:00000000000007E6                 test    al, al
+.text:00000000000007E8                 jz      short loc_843
+.text:00000000000007EA                 pause
+.text:00000000000007EC                 mov     rax, [rbp+this]
+.text:00000000000007F0                 mov     rax, [rax]
+.text:00000000000007F3                 mov     [rbp+var_8], rax
+.text:00000000000007F7                 mov     [rbp+var_18], 0
+.text:00000000000007FE                 mov     eax, [rbp+var_18]
+.text:0000000000000801                 mov     [rbp+var_14], eax
+.text:0000000000000804                 cmp     [rbp+var_14], 0
+.text:0000000000000808                 jz      short loc_82D
+.text:000000000000080A                 cmp     [rbp+var_14], 1
+.text:000000000000080E                 jz      short loc_82C
+.text:0000000000000810                 cmp     [rbp+var_14], 2
+.text:0000000000000814                 jz      short loc_828
+.text:0000000000000816                 cmp     [rbp+var_14], 4
+.text:000000000000081A                 jz      short loc_824
+.text:000000000000081C                 cmp     [rbp+var_14], 6
+.text:0000000000000820                 jnz     short loc_82B
+.text:0000000000000822                 jmp     short loc_825
+.text:0000000000000824                 nop
+.text:0000000000000825                 nop
+.text:0000000000000826                 jmp     short loc_82D
+.text:0000000000000828                 nop
+.text:0000000000000829                 jmp     short loc_82C
+.text:000000000000082B                 nop
+.text:000000000000082C                 nop
+.text:000000000000082D                 mov     rax, [rbp+var_8]
+.text:0000000000000831                 movzx   eax, byte ptr [rax]
+.text:0000000000000834                 test    al, al
+.text:0000000000000836                 setnz   al
+.text:0000000000000839                 test    al, al
+.text:000000000000083B                 jz      loc_79A
+.text:0000000000000841                 jmp     short loc_7EA
+.text:0000000000000843                 nop
+.text:0000000000000844                 pop     rbp
+.text:0000000000000845                 retn

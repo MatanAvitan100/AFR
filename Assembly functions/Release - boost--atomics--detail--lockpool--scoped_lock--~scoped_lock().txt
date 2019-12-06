@@ -1,0 +1,3 @@
+.text:00000000000007B0                 mov     rax, [rdi]      
+.text:00000000000007B3                 mov     byte ptr [rax], 0
+.text:00000000000007B6                 retn

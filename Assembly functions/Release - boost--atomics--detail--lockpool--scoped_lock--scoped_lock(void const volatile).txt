@@ -1,0 +1,25 @@
+.text:0000000000000750                 mov     rax, rsi        
+.text:0000000000000753                 mov     rdx, 0C7CE0C7CE0C7CE0Dh
+.text:000000000000075D                 mov     ecx, 1
+.text:0000000000000762                 mul     rdx
+.text:0000000000000765                 shr     rdx, 5
+.text:0000000000000769                 lea     rax, [rdx+rdx*4]
+.text:000000000000076D                 lea     rax, [rdx+rax*8]
+.text:0000000000000771                 sub     rsi, rax
+.text:0000000000000774                 lea     rax, boost::atomics::detail::`anonymous namespace'::g_lock_pool
+.text:000000000000077B                 shl     rsi, 6
+.text:000000000000077F                 add     rax, rsi
+.text:0000000000000782                 mov     [rdi], rax
+.text:0000000000000785                 nop     dword ptr [rax]
+.text:0000000000000788                 mov     edx, ecx
+.text:000000000000078A                 xchg    dl, [rax]
+.text:000000000000078C                 test    dl, dl
+.text:000000000000078E                 jz      short locret_7A0
+.text:0000000000000790                 pause
+.text:0000000000000792                 mov     rax, [rdi]
+.text:0000000000000795                 movzx   edx, byte ptr [rax]
+.text:0000000000000798                 test    dl, dl
+.text:000000000000079A                 jnz     short loc_790
+.text:000000000000079C                 jmp     short loc_788
+.text:000000000000079E                 align 20h
+.text:00000000000007A0                 rep retn
